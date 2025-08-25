@@ -30,14 +30,14 @@
 
       <!-- Social Icons -->
       <div class="flex gap-4 mt-2 md:mt-0">
-        <a href="#" aria-label="Twitter" class="hover:text-white transition">
+        <a href="https://x.com/RaneBhumik" aria-label="Twitter" class="hover:text-white transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M19.633 7.997c.014.199.014.398.014.597 0 6.087-4.63 13.104-13.104 13.104-2.61 0-5.042-.756-7.09-2.074.363.043.713.057 1.09.057a9.236 9.236 0 005.73-1.975 4.605 4.605 0 01-4.296-3.188c.28.042.553.07.847.07.405 0 .81-.056 1.19-.154A4.6 4.6 0 012.93 9.75v-.057a4.63 4.63 0 002.074.584A4.596 4.596 0 012.936 7.4c0-.847.225-1.624.62-2.302a13.07 13.07 0 009.493 4.817 5.19 5.19 0 01-.112-1.053 4.595 4.595 0 014.595-4.595c1.325 0 2.524.553 3.366 1.446a9.04 9.04 0 002.918-1.118 4.59 4.59 0 01-2.016 2.533A9.14 9.14 0 0022 6.074a9.86 9.86 0 01-2.367 2.447z"
             />
           </svg>
         </a>
-        <a href="#" aria-label="GitHub" class="hover:text-white transition">
+        <a href="https://github.com/Bhumik14/AI-Study-Planner" aria-label="GitHub" class="hover:text-white transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path
               fill-rule="evenodd"
