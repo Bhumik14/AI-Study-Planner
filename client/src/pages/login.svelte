@@ -1,6 +1,7 @@
 <script lang="ts">
+    import { push } from 'svelte-spa-router';
     import { api } from "../lib/api";
-
+    import { isLoggedIn } from '../stores/auth.store';
     let email = $state("");
     let password = $state("");
     let error = $state("");
@@ -10,9 +11,12 @@
         e.preventDefault();
         try {
             const { data } = await api.post("/auth/login", { email, password });
+            localStorage.setItem("token", data.token);
+            isLoggedIn.set(true);
             success = "Login successful!";
             error = "";
             console.log("Login success:", data);
+            window.location.href = "/";
         } catch (err: unknown) {
             error = "Invalid email or password.";
             success = "";
@@ -65,7 +69,7 @@
     <!-- Register Link -->
     <p class="text-sm text-gray-600 mt-6 text-center">
       Don’t have an account?
-      <a href="/register" class="text-blue-600 hover:underline font-medium">Register here</a>
+      <button onclick={() => push('/register')} class="text-blue-600 hover:underline font-medium">Register here</button>
     </p>
 
     <!-- Divider -->

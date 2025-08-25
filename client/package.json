@@ -20,6 +20,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
     "axios": "^1.11.0",
+    "svelte-spa-router": "^4.0.1",
     "tailwindcss": "^4.1.12"
   }
 }
