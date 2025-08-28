@@ -7,7 +7,9 @@ export interface IUser extends Document {
   name: string;
   email: string;
   password: string;
+  googleId: string;
   comparePassword(candidatePassword: string): Promise<boolean>;
+
 }
 
 // 2. Schema definition
@@ -15,14 +17,15 @@ const userSchema = new mongoose.Schema<IUser>(
   {
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
+    password: { type: String, required: false },
+    googleId: { type: String, unique: true, sparse: true },
   },
   { timestamps: true }
 );
 
 // 3. Pre-save hook to hash password
 userSchema.pre<IUser>("save", async function (next) {
-  if (!this.isModified("password")) return next();
+  if (!this.isModified("password") || !this.password) return next();
   this.password = await bcrypt.hash(this.password, 10);
   next();
 });
