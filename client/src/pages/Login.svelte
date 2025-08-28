@@ -11,8 +11,9 @@
         e.preventDefault();
         try {
             const { data } = await api.post("/auth/login", { email, password });
-            localStorage.setItem("token", data.token);
-            isLoggedIn.set(true);
+            // localStorage.setItem("token", data.token);
+            // isLoggedIn.set(true);
+            isLoggedIn.login(data.token);
             success = "Login successful!";
             error = "";
             console.log("Login success:", data);
@@ -23,6 +24,10 @@
             console.log(err);
         }
     }
+    function handleGoogleAuth(){
+      window.open("http://localhost:3000/api/auth/google", "_self");
+    }
+
 </script>
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100">
@@ -81,6 +86,7 @@
 
     <!-- Google Sign-in -->
     <button
+      onclick={handleGoogleAuth}
       id="googleauth"
       class="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition"
     >
